@@ -1,11 +1,14 @@
 public class SnakesAndLadders
 {
+	//public static final int Ending_Point=100;
 	public static final int Ladder=1;
 	public static final int Snake=2;
-
+	
+	
 	public static void main(String args[]) 
 	{
-		int Pos=0;
+		 int Pos=0;
+		 int counter=0;
 		while (Pos < 100)
 		{
 			int Option = (int)Math.floor(Math.random() * 10) % 3; 
@@ -30,12 +33,11 @@ public class SnakesAndLadders
 						System.out.println("\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" );
 						System.out.println("************************** You Win The Game *****************************");
 						System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n" );
-						break ;
 					}
 			}
 			else if(Option == 2)
 			{
-						if(Pos > 0)
+						if(Pos >= 0)
 						{
 							Pos = Pos - Dice;
 							System.out.println("****** You Got a Snake ******\nYou Move Behind By " +Dice+ " To " +Pos+ "Positions");
@@ -49,6 +51,11 @@ public class SnakesAndLadders
 			{
 						System.out.println("Player Does not Play His Turn \nStay in the Same Position:- "+Pos);
 			}
+			System.out.println("***************************************************************************" );
+			System.out.println("Player Current Position Is " + Pos );
+			System.out.println("***************************************************************************" );
+			counter ++;
 		}
+		System.out.println("User Rolled Dice "+counter+" TImes to Win !!!!! ");
 	}
 }
