@@ -1,19 +1,28 @@
 public class SnakesAndLadders
 {
-	public static final int Starting_Point=0;
-	public static final int Ending_Point=100;
-	public static void main(String args [])
+	public static void main(String args[])
 	{
-		System.out.println("***************************************************");
-		System.out.println("Welcome to Snake And Ladder Game");
-		System.out.println("***************************************************");
-		int Player_1=0;
+		int Pos=0;
+		final int Ladder=1;
+		final int Snake=2;
 		
-		System.out.println("Game Start Point is:-"+Starting_Point+ "\nEnd point is:-"+Ending_Point);
-		System.out.println("\nPlayer Intitial Starting Point is :-"  +Player_1);
+		int Option = (int)Math.floor(Math.random() * 10) % 3; 
+		int Dice = (int)(Math.floor(Math.random() * 10) % 6) + 1;
 		
-		int dice =(int)(Math.floor(Math.random()*10) %6) + 1;
-		
-		System.out.println("\nPlayer Rolled a Dice and Get :- " +dice);
+		switch((int)Option)
+		{
+			case Ladder:
+				Pos+=Dice;
+				System.out.println("****** You Got a Ladder ******\nYou Move Ahead By " +Dice+" Positions");
+				break;
+			
+			case Snake:
+				System.out.println("****** You Got a Snake ******\nYou Move Behind By " +Dice+" Positions");
+				Pos-=Dice;
+			break;
+			default:
+					System.out.println("Player Does not Play His Turn");
+					System.out.println("Stay in the Same Position:- "+Pos);
+		}
 	}
 }
