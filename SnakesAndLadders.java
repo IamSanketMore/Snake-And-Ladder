@@ -11,6 +11,9 @@ public class SnakesAndLadders
 		
 		System.out.println("Game Start Point is:-"+Starting_Point+ "\nEnd point is:-"+Ending_Point);
 		System.out.println("\nPlayer Intitial Starting Point is :-"  +Player_1);
+		
+		int dice =(int)(Math.floor(Math.random()*10) %6) + 1;
+		
+		System.out.println("\nPlayer Rolled a Dice and Get :- " +dice);
 	}
 }
-
